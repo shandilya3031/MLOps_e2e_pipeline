@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s # How often to scrape metrics
+
+scrape_configs:
+  - job_name: 'fastapi-app'
+    # This tells Prometheus to find your API container
+    static_configs:
+      - targets: ['api:8000']

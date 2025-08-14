@@ -1,0 +1,12 @@
+2025-08-10 17:13:47,429 - INFO - Application startup: Loading ML model...
+2025-08-10 17:13:49,715 - INFO - Successfully loaded model 'IrisClassifier' with alias 'production'
+2025-08-10 17:14:16,484 - INFO - Received prediction request from 127.0.0.1: {'sepal_length_cm': 6.1, 'sepal_width_cm': 3.0, 'petal_length_cm': 4.6, 'petal_width_cm': 1.4}
+2025-08-10 17:14:16,499 - INFO - Prediction result: 1 (Versicolor)
+2025-08-10 17:14:26,169 - INFO - Received prediction request from 127.0.0.1: {'sepal_length_cm': 7.3, 'sepal_width_cm': 2.9, 'petal_length_cm': 6.3, 'petal_width_cm': 1.8}
+2025-08-10 17:14:26,177 - INFO - Prediction result: 2 (Virginica)
+2025-08-10 17:22:12,944 - INFO - Application shutdown: Cleaning up resources.
+2025-08-10 17:28:23,491 - INFO - Application startup: Loading ML model...
+2025-08-10 17:28:26,665 - INFO - Successfully loaded model 'IrisClassifier' with alias 'production'
+2025-08-10 17:29:02,134 - INFO - Received prediction request from 127.0.0.1: {'sepal_length_cm': 7.3, 'sepal_width_cm': 2.9, 'petal_length_cm': 6.3, 'petal_width_cm': 1.8}
+2025-08-10 17:29:02,149 - INFO - Prediction result: 2 (Virginica)
+2025-08-10 17:33:00,940 - INFO - Application shutdown: Cleaning up resources.

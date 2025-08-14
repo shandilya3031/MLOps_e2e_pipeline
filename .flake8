@@ -1,0 +1,13 @@
+[flake8]
+# Set the max line length (same as we had in the CI script)
+max-line-length = 127
+
+# --- This is the crucial part ---
+# Tell flake8 which directories to ignore completely.
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    logs,
+    data,
+    mlruns

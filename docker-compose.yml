@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  training:
+    build: .
+    volumes:
+      - ./mlruns:/app/mlruns
+      - ./data:/app/data
+    command: python src/training/train.py
+
+  api:
+    build: .
+    volumes:
+      - ./mlruns:/app/mlruns
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+
+  # --- ADD THESE NEW SERVICES ---
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      # Mount our new config file into the container
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090" # Port to view Prometheus UI
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000" # Port to view Grafana UI
+    # This volume will save your dashboards if you stop the container
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+# This defines the persistent volume for Grafana
+volumes:
+  grafana-data:
